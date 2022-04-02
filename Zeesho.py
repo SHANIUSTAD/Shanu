@@ -61,7 +61,7 @@ def main():
     print ' \033[0m[3].\x1b[1;96m New Channel Go & Sub Guyss '
     print ' \033[0m[0].\x1b[1;96m Exit Tool \n'
     print ''
-    main log_sel()
+    log_sel()
 
 
 def log_sel():
