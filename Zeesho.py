@@ -432,7 +432,7 @@ def crack_select():
     print ''
     print ''
     raw_input(' \x1b[1;92m Press Enter To Go Back ! ')
-    <module> main()
+    main()
     
 #THANKX SHANI BRO
 
