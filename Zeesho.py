@@ -67,7 +67,8 @@ def main():
 def log_sel():
     select = raw_input('\x1b[1;97m SELECT: \x1b[0m')
     if select == '1':
-        log_sel menu()
+         
+	main()
     elif select == '2':
         os.system('xdg-open https://www.facebook.com/profile.php?id=100070196383159')
         main()
