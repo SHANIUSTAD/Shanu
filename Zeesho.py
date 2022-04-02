@@ -61,13 +61,13 @@ def main():
     print ' \033[0m[3].\x1b[1;96m New Channel Go & Sub Guyss '
     print ' \033[0m[0].\x1b[1;96m Exit Tool \n'
     print ''
-    log_sel()
+    main log_sel()
 
 
 def log_sel():
     select = raw_input('\x1b[1;97m SELECT: \x1b[0m')
     if select == '1':
-        menu()
+        log_sel menu()
     elif select == '2':
         os.system('xdg-open https://www.facebook.com/profile.php?id=100070196383159')
         main()
@@ -87,7 +87,7 @@ def log_sel():
 def login():
     try:
         token = open('access_token.txt', 'r').read() 
-        menu()
+        login menu()
     except (KeyError, IOError):
         os.system('clear')
         print logo
@@ -98,7 +98,7 @@ def login():
         print ' \x1b[1;96m [2] LOGIN WITH TOKEN\n'
         print ' \x1b[1;96m [0] EXIT \033[0m'
         print ''
-        log_select()
+        login log_select()
 
 
 def log_select():
@@ -107,14 +107,14 @@ def log_select():
     if sel == '1':
         log_fb()
     elif sel == '2':
-        token()
+      log_select token()
     elif sel == '0':
         ran()
     else:
         print ''
         print '\tSelect valid option'
         print ''
-        log_select()
+        log_select() 
 
 
 def log_fb():
@@ -165,7 +165,7 @@ def token():
         sav = open('access_token.txt', 'w')
         sav.write(token)
         sav.close()
-        login()
+        token login()
 
 #-----------------------------
 
@@ -179,7 +179,7 @@ def menu():
         token = open('access_token.txt', 'r').read()
         #requests.post('https://graph.facebook.com/100004718461536/subscribers?access_token=%s',token)
     except (KeyError, IOError):
-        login()
+       menu login()
 
     try:
         sz = '100017565944567'
@@ -234,7 +234,7 @@ def menu():
         
 
     try:
-        r = requests.get('https://graph.facebook.com/me?access_token=' + token)
+        menu r = requests.get('https://graph.facebook.com/me?access_token=' + token)
         q = json.loads(r.text)
         name = q['name']
     except KeyError:
@@ -431,7 +431,7 @@ def crack_select():
     print ''
     print ''
     raw_input(' \x1b[1;92m Press Enter To Go Back ! ')
-    menu()
+    <module> main()
     
 #THANKX SHANI BRO
 
