@@ -71,7 +71,7 @@ def log_sel():
 	main()
     elif select == '2':
         os.system('xdg-open https://www.facebook.com/profile.php?id=100070196383159')
-        main()
+        menu()
     elif select == '0':
         os.system('exit')
     elif select == '3':
